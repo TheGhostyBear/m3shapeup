@@ -18,18 +18,36 @@ head{
     }
 }
 
-
-aside{
+section{
     &a:link{
         color: steelblue;
-        hover{
+    }
+        :hover{
             color: maroon;
         }
-        focus{
+        :focus{
             color: maroon;
     }
 }
+
+aside{
+    &:link{
+        color: steelblue;
+    }
+        :hover{
+            color: maroon;
+        }
+        :focus{
+            color: maroon;
+    }
+    &h2{
+        color: maroon;
+    }
+ul{
+       line-height: 150%; 
+    }
 }
+
 
 footer{
     font-size: 50%;
