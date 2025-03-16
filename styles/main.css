@@ -18,17 +18,17 @@ header{
     }
 }
 
-section{
+section {
     & a:link {
-        color: steelblue;
+      color: steelblue;
     }
-        &:hover {
-            color: maroon;
-        }
-        &:focus {
-            color: maroon;
+    & a:hover {
+      color: maroon;
     }
-}
+    & a:focus {
+      color: maroon;
+    }
+  }
 
 aside {
     & a:link {
