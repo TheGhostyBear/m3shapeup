@@ -7,7 +7,7 @@ a{
 h1{
     font-size: larger;
 }
-head{
+header{
     & h2 {
         font-style: italic;
         color: steelblue;
@@ -19,34 +19,38 @@ head{
 }
 
 section{
-    & a:link{
+    & a:link {
         color: steelblue;
     }
-        :hover{
+        &:hover {
             color: maroon;
         }
-        :focus{
+        &:focus {
             color: maroon;
     }
 }
 
-aside{
-    & a:link{
-        color: steelblue;
-    }
-        :hover{
-            color: maroon;
-        }
-        :focus{
-            color: maroon;
-    }
-    & h2 {
+aside {
+    & a:link {
+      color: steelblue;
+      
+      &:hover {
         color: maroon;
+      }
+      
+      &:focus {
+        color: maroon;
+      }
     }
+    
+    & h2 {
+      color: maroon;
+    }
+  }
 ul{
        line-height: 150%; 
     }
-}
+
 
 
 footer{
