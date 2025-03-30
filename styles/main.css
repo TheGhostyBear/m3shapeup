@@ -55,8 +55,8 @@ header{
 
 .main-content {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1em;
     margin: 1em 0;
 }
