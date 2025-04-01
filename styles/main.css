@@ -58,6 +58,7 @@ header{
     flex-direction: row;
     gap: 1em;
     margin: 1em 0;
+    margin-bottom: 3em;
 }
 
 .intro-content {
