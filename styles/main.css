@@ -56,10 +56,17 @@ header{
 .main-content {
     display: flex;
     flex-direction: row;
+    flex-grow: 2;
+    flex-wrap: wrap;
+    padding: 20px;
     gap: 1em;
     margin: 1em 0;
 }
-
+.sidebar {
+  flex-grow: 1;
+  padding: 20px;
+}
+/* Idk if this is will work for clearing the space below it but it's worth a shot and I get to play with divs and classes more. */
 section {
     flex: 3;
     min-width: 280px;
