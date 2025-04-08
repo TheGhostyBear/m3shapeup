@@ -6,7 +6,7 @@
 
 body {
   width: 100%;
-    margin: 0 auto;
+  margin: 0 auto;
   border: 1px solid steelblue;
   box-shadow: 5px 5px 10px black;
   padding: 1em;
@@ -52,6 +52,64 @@ header{
         height: auto;
     }
 }
+
+/* Navigation menu styles */
+.main-nav {
+    background-color: steelblue;
+    margin-bottom: 1em;
+    border-radius: 5px;
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.8em 1em;
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.main-nav a.current {
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+/* Dropdown menu styles */
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: steelblue;
+    min-width: 200px;
+    z-index: 1;
+    flex-direction: column;
+}
+
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+/* End of navigation menu styles */
 
 .main-content {
     display: flex;
@@ -118,6 +176,11 @@ aside {
 ul{
     line-height: 150%;
     margin-left: 2em;
+}
+
+/* Reset left margin for navigation lists */
+.main-nav ul {
+    margin-left: 0;
 }
 
 footer{
