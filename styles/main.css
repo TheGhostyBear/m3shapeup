@@ -78,10 +78,6 @@ header img {
   padding: 0;
 }
 
-.main-nav:hover ul {
-  display: flex; /* Show on hover for mobile */
-}
-
 .main-nav li {
   position: relative;
 }
@@ -113,11 +109,10 @@ header img {
   position: relative; /* For mobile layout */
   background-color: rgba(70, 130, 180, 0.9);
   z-index: 1; /* Ensure it appears above other content */
-  /* Reset potential list styles if .submenu is a ul/ol */
   list-style-type: none;
   margin: 0;
   padding: 0; /* Reset padding */
-  padding-left: 1em; /* Re-apply specific indent for mobile */
+  padding-left: 1em; /* Indent for mobile */
 }
 
 /* Use direct child selector for robustness */
@@ -191,6 +186,25 @@ footer {
   margin-top: 1em;
 }
 
+/* Media query ONLY for mobile hover effect (below 768px) */
+@media screen and (max-width: 767px) {
+  .main-nav:hover ul {
+    display: flex; /* Show main ul on hover ONLY for mobile */
+  }
+  /* Ensure submenu stays relative on mobile */
+  .submenu {
+     position: relative;
+     padding-left: 1em; /* Keep mobile indent */
+     /* Reset any desktop styles that might leak */
+     top: auto;
+     left: auto;
+     min-width: auto;
+     background-color: rgba(70, 130, 180, 0.9); /* Keep mobile background */
+     border-radius: 0;
+     box-shadow: none;
+  }
+}
+
 /* Media query for medium screens - horizontal navigation begins */
 @media screen and (min-width: 768px) {
   .main-nav::before {
@@ -198,33 +212,30 @@ footer {
   }
   
   .main-nav ul {
-    display: flex;
+    display: flex; /* Ensure main ul is always visible on desktop */
     flex-direction: row;
     flex-wrap: wrap;
   }
   
   .submenu {
-    display: none; /* Re-affirm hidden state for desktop */
+    display: none; /* Ensure hidden by default on desktop */
     position: absolute; /* Absolute positioning for desktop dropdown */
     top: 100%; /* Position below the parent */
     left: 0;
-    min-width: 200px; /* Give it a minimum width */
-    background-color: rgba(70, 130, 180, 0.9); /* Ensure background is consistent */
-    padding: 0; /* Reset padding for absolute positioning */
-    border-radius: 0 0 5px 5px; /* Optional: Add some rounding */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: Add shadow */
+    min-width: 200px;
+    background-color: rgba(70, 130, 180, 0.9); 
+    padding: 0; 
+    border-radius: 0 0 5px 5px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
   }
 
   /* Style links within the absolutely positioned submenu */
   .submenu li a {
       padding: 0.5em 1em;
-      white-space: nowrap; /* Prevent wrapping */
-      /* display: block; is inherited from the base .main-nav a rule */
-      /* color: white; is inherited */
-      /* text-decoration: none; is inherited */
+      white-space: nowrap;
   }
 
-   /* The base hover rule .dropdown:hover > .submenu { display: block; } still applies correctly */
+  /* The base .dropdown:hover > .submenu rule handles showing */
 }
 
 /* Media query for larger screens - side-by-side layout */
