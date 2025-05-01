@@ -109,15 +109,20 @@ header img {
 }
 
 .submenu {
-  display: none;
-  position: relative; /* Changed from absolute for mobile */
+  display: none; /* Ensure hidden by default */
+  position: relative; /* For mobile layout */
   background-color: rgba(70, 130, 180, 0.9);
-  padding-left: 1em;
-  z-index: 1;
+  z-index: 1; /* Ensure it appears above other content */
+  /* Reset potential list styles if .submenu is a ul/ol */
+  list-style-type: none;
+  margin: 0;
+  padding: 0; /* Reset padding */
+  padding-left: 1em; /* Re-apply specific indent for mobile */
 }
 
-.dropdown:hover .submenu {
-  display: block;
+/* Use direct child selector for robustness */
+.dropdown:hover > .submenu {
+  display: block; /* Show on hover */
 }
 
 /* Layout for mobile */
@@ -199,11 +204,27 @@ footer {
   }
   
   .submenu {
-    position: absolute;
-    top: 100%;
+    display: none; /* Re-affirm hidden state for desktop */
+    position: absolute; /* Absolute positioning for desktop dropdown */
+    top: 100%; /* Position below the parent */
     left: 0;
-    min-width: 200px;
+    min-width: 200px; /* Give it a minimum width */
+    background-color: rgba(70, 130, 180, 0.9); /* Ensure background is consistent */
+    padding: 0; /* Reset padding for absolute positioning */
+    border-radius: 0 0 5px 5px; /* Optional: Add some rounding */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Optional: Add shadow */
   }
+
+  /* Style links within the absolutely positioned submenu */
+  .submenu li a {
+      padding: 0.5em 1em;
+      white-space: nowrap; /* Prevent wrapping */
+      /* display: block; is inherited from the base .main-nav a rule */
+      /* color: white; is inherited */
+      /* text-decoration: none; is inherited */
+  }
+
+   /* The base hover rule .dropdown:hover > .submenu { display: block; } still applies correctly */
 }
 
 /* Media query for larger screens - side-by-side layout */
