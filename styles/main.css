@@ -1,4 +1,3 @@
-/* Base styles */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +12,10 @@ body {
   padding: 1em;
   font-family: Arial, Helvetica, sans-serif;
   font-size: calc(14px + 0.4vw);
+  & h2 {
+    padding: 0.1em;
+    font-size: calc(18px + 0.5vw);
+  }
 }
 
 head, header, body {
@@ -34,147 +37,94 @@ header {
   padding-bottom: 1em;
   margin-bottom: 1em;
   overflow: auto;
+  & h2 {
+    font-style: italic;
+    color: steelblue;
+    font-size: calc(18px + 0.5vw);
+  }
+  & img {
+    float: left;
+    margin-right: 1em;
+    width: 100%;
+    min-width: 100px;
+    max-width: 120px;
+    height: auto;
+  }
 }
 
-header h2 {
-  font-style: italic;
-  color: steelblue;
-  font-size: calc(18px + 0.5vw);
-}
-
-header img {
-  float: left;
-  margin-right: 1em;
-  width: 100%;
-  min-width: 100px;
-  max-width: 120px;
-  height: auto;
-}
-
-/* Mobile-first navigation menu styles */
-.main-nav {
-  background-color: steelblue;
-  margin-bottom: 1em;
-  border-radius: 5px;
-  position: relative;
-}
-
-/* Hamburger menu icon for mobile */
-.main-nav::before {
-  content: "≡";
-  font-size: 2em;
-  color: white;
-  position: absolute;
-  right: 20px;
-  top: 5px;
-  cursor: pointer;
-}
-
-.main-nav ul {
-  display: none; /* Hidden by default on mobile */
-  flex-direction: column;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.main-nav li {
-  position: relative;
-}
-
-.main-nav a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  padding: 0.8em 1em;
-  font-weight: bold;
-}
-
-.main-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.main-nav a.current {
-  border: 2px solid white;
-  border-radius: 10px;
-}
-
-/* Dropdown menu styles */
-.dropdown {
-  position: relative;
-}
-
-.submenu {
-  display: none; /* Ensure hidden by default */
-  position: relative; /* For mobile layout */
-  background-color: rgba(70, 130, 180, 0.9);
-  z-index: 1; /* Ensure it appears above other content */
-  list-style-type: none;
-  margin: 0;
-  padding: 0; /* Reset padding */
-  padding-left: 1em; /* Indent for mobile */
-}
-
-/* Use direct child selector for robustness */
-.dropdown:hover > .submenu {
-  display: block; /* Show on hover */
-}
-
-/* Layout for mobile */
 .main-content {
   display: flex;
-  flex-direction: column; /* Stack vertically by default for mobile */
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
   gap: 1em;
   margin: 1em 0;
+  justify-content: space-between;
+}
+
+.sidebar {
+  flex-grow: 1;
   padding: 20px;
 }
 
 section {
+  flex: 3;
+  min-width: 280px;
   margin: 0;
-  padding-right: 0; /* Changed for mobile */
-}
-
-section a:link {
-  color: steelblue;
-}
-
-section a:hover, section a:focus {
-  color: maroon;
-}
-
-section h3 {
-  font-size: calc(16px + 0.4vw);
-  margin-top: 0.8em;
+  padding: 0 1em;
+  order: 2;
+  & a:link {
+    color: steelblue;
+  }
+  & a:hover {
+    color: maroon;
+  }
+  & a:focus {
+    color: maroon;
+  }
+  & h3 {
+    font-size: calc(16px + 0.4vw);
+    margin-top: 0.8em;
+  }
 }
 
 aside {
   border: 2px solid steelblue;
   border-radius: 10px;
   padding: 1em;
-  margin: 1em 0 0 0; /* Added top margin for mobile */
+  margin: 0;
+  & a:link {
+    color: steelblue;
+    &:hover {
+      color: maroon;
+    }
+    &:focus {
+      color: maroon;
+    }
+  }
+  & h2 {
+    color: maroon;
+    font-size: calc(16px + 0.4vw);
+  }
 }
 
-aside a:link {
-  color: steelblue;
+.aside-1 {
+  flex: 1;
+  min-width: 180px;
+  max-width: 250px;
+  order: 1;
 }
 
-aside a:hover, aside a:focus {
-  color: maroon;
-}
-
-aside h2 {
-  color: maroon;
-  font-size: calc(16px + 0.4vw);
+.aside-2 {
+  flex: 1;
+  min-width: 180px;
+  max-width: 250px;
+  order: 3;
 }
 
 ul {
   line-height: 150%;
   margin-left: 2em;
-}
-
-/* Reset left margin for navigation lists */
-.main-nav ul {
-  margin-left: 0;
 }
 
 footer {
@@ -186,79 +136,64 @@ footer {
   margin-top: 1em;
 }
 
-/* Media query ONLY for mobile hover effect (below 768px) */
-@media screen and (max-width: 767px) {
-  .main-nav:hover ul {
-    display: flex; /* Show main ul on hover ONLY for mobile */
-  }
-  /* Ensure submenu stays relative on mobile */
-  .submenu {
-     position: relative;
-     padding-left: 1em; /* Keep mobile indent */
-     /* Reset any desktop styles that might leak */
-     top: auto;
-     left: auto;
-     min-width: auto;
-     background-color: rgba(70, 130, 180, 0.9); /* Keep mobile background */
-     border-radius: 0;
-     box-shadow: none;
+/* Navigation Menu Styles */
+nav {
+  clear: both;
+  margin-top: 1em;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: steelblue;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+}
+
+nav ul li a:hover {
+  background-color: #335b8a;
+}
+
+nav ul li a.current {
+  border: 2px solid white;
+  border-radius: 5px;
+}
+
+/* Submenu styles */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: steelblue;
+  min-width: 200px;
+  z-index: 1;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul ul {
+    position: static;
+    width: 100%;
   }
 }
 
-/* Media query for medium screens - horizontal navigation begins */
-@media screen and (min-width: 768px) {
-  .main-nav::before {
-    display: none; /* Hide hamburger icon */
-  }
-  
-  .main-nav ul {
-    display: flex; /* Ensure main ul is always visible on desktop */
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  .submenu {
-    display: none; /* Ensure hidden by default on desktop */
-    position: absolute; /* Absolute positioning for desktop dropdown */
-    top: 100%; /* Position below the parent */
-    left: 0;
-    min-width: 200px;
-    background-color: rgba(70, 130, 180, 0.9); 
-    padding: 0; 
-    border-radius: 0 0 5px 5px; 
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-  }
-
-  /* Style links within the absolutely positioned submenu */
-  .submenu li a {
-      padding: 0.5em 1em;
-      white-space: nowrap;
-  }
-
-  /* The base .dropdown:hover > .submenu rule handles showing */
-}
-
-/* Media query for larger screens - side-by-side layout */
-@media screen and (min-width: 992px) {
-  .main-content {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-  
-  section {
-    flex: 3;
-    min-width: 280px;
-    padding-right: 1em;
-  }
-  
-  .sidebar {
-    flex-grow: 1;
-    padding: 20px;
-  }
-  
-  aside {
-    flex: 1;
-    min-width: 180px;
-    margin: 0;
-  }
+/* Override default margin for nav lists */
+nav ul {
+  margin-left: 0;
 }
