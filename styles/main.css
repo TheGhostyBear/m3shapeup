@@ -186,12 +186,6 @@ nav ul li:hover > ul {
   .sidebar {
     flex: 1;
     min-width: 220px;
-    border: #335b8a; 
-    border-radius: 5px;
-    padding: 1em;
-    border-style: solid;
-    border-width: 2px;
-    flex-wrap: wrap;
 
   }
   
