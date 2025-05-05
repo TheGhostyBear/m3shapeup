@@ -21,7 +21,10 @@ body {
   & h3 {
       color:#800000
     }
+  & h1 {
+    color: #800000;
   }
+}
 
 head, header, body {
   font-family: Arial, Helvetica, sans-serif;
@@ -58,6 +61,23 @@ header {
   }
 }
 
+footer{
+  font-size: calc(10px + 0.2vw);
+  text-align: center;
+  background-color: steelblue;
+  color: white;
+  padding: 1em;
+  margin-top: 1em;
+}
+
+aside {
+  flex: 1;
+    min-width: 180px;
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    padding: 1em;
+    margin: 0;
+}
 /* Main content layout - mobile first */
 .main-content {
   display: flex;
