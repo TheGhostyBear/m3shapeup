@@ -36,6 +36,10 @@ h2 {
   color:#800000
 }
 
+h3 {
+  color:#800000
+}
+
 header {
   background: linear-gradient(to bottom, white, lightsteelblue);
   border-bottom: 2px solid steelblue;
@@ -165,6 +169,12 @@ nav ul li:hover > ul {
   .sidebar {
     flex: 1;
     min-width: 220px;
+    border: #335b8a; 
+    border-radius: 5px;
+    padding: 1em;
+    border-style: solid;
+    border-width: 2px;
+
   }
   
   /* Navigation for larger screens */
