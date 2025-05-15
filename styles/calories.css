@@ -1,0 +1,92 @@
+/* Calorie Counter CSS */
+
+/* General table styling */
+.calorie-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    margin: 1em 0;
+}
+
+/* Default table styling for large screens */
+.calorie-table th,
+.calorie-table td {
+    border: 1px solid steelblue;
+    padding: 0.5em;
+    text-align: left;
+}
+
+.calorie-table th {
+    background-color: steelblue;
+    color: white;
+    font-weight: bold;
+}
+
+.calorie-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Category cells styling */
+.calorie-table td[rowspan] {
+    background-color: #d6e4f0;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 767px) {
+    .calorie-table {
+        font-size: 14px;
+    }
+
+    /* Switch to card-style display on small screens */
+    .calorie-table, 
+    .calorie-table thead, 
+    .calorie-table tbody, 
+    .calorie-table th, 
+    .calorie-table td, 
+    .calorie-table tr {
+        display: block;
+    }
+
+    /* Hide table headers */
+    .calorie-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .calorie-table tr {
+        border: 1px solid steelblue;
+        margin-bottom: 1em;
+    }
+
+    /* Reset rowspan attributes for categories */
+    .calorie-table td[rowspan] {
+        display: block;
+        width: 100%;
+        background-color: steelblue;
+        color: white;
+        font-weight: bold;
+        border-bottom: 1px solid white;
+        text-align: center;
+    }
+
+    /* Style each data cell */
+    .calorie-table td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    /* Hide border for the last td in each row */
+    .calorie-table td:last-child {
+        border-bottom: 0;
+    }
+
+    /* Add pseudo-elements for labels */
+    .calorie-table td:nth-of-type(2):before { content: "Food: "; font-weight: bold; }
+    .calorie-table td:nth-of-type(3):before { content: "Serving: "; font-weight: bold; }
+    .calorie-table td:nth-of-type(4):before { content: "Calories: "; font-weight: bold; }
+}
