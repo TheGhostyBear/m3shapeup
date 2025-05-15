@@ -78,29 +78,35 @@
         border: none;
     }
 
-    /* Style each data cell */
+    /* Reset the default display for td cells in mobile view */
     .calorie-table td {
+        display: block;
         border: none;
         position: relative;
-        padding: 0.3em 0.5em;
-        border-bottom: none;
+        padding: 0.5em;
         text-align: left;
     }
     
-    /* Remove pseudo-elements for labels */
-    .calorie-table td:before { 
-        content: none; 
-    }
-    
-    /* Layout the food items in a vertical stack without labels */
-    .calorie-table td:nth-of-type(2),
-    .calorie-table td:nth-of-type(3),
-    .calorie-table td:nth-of-type(4) {
-        padding-left: 1em;
-    }
-    
-    /* Bold the food names ya idiot*/
+    /* Style food names to be bold */
     .calorie-table td:nth-of-type(2) {
         font-weight: bold;
+        padding-bottom: 0;
+    }
+    
+    /* Style serving size and calories with smaller padding */
+    .calorie-table td:nth-of-type(3),
+    .calorie-table td:nth-of-type(4) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    
+    /* Add spacing between food items within the same category */
+    .calorie-table td:nth-of-type(4) {
+        padding-bottom: 1em;
+    }
+    
+    /* Remove spacing after the last item in a category */
+    .calorie-table tr:last-child td:last-child {
+        padding-bottom: 0.5em;
     }
 }
