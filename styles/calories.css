@@ -98,4 +98,9 @@
     .calorie-table td:nth-of-type(4) {
         padding-left: 1em;
     }
+    
+    /* Bold the food names ya idiot*/
+    .calorie-table td:nth-of-type(2) {
+        font-weight: bold;
+    }
 }
