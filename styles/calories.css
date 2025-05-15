@@ -85,9 +85,10 @@
         position: relative;
         padding: 0.5em;
         text-align: left;
+        font-weight: normal;
     }
     
-    /* Style food names to be bold */
+    /* Ensure only the food names are bold (second cell in each row) */
     .calorie-table td:nth-of-type(2) {
         font-weight: bold;
         padding-bottom: 0;
@@ -98,6 +99,7 @@
     .calorie-table td:nth-of-type(4) {
         padding-top: 0;
         padding-bottom: 0;
+        font-weight: normal;
     }
     
     /* Add spacing between food items within the same category */
