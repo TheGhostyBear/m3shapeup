@@ -1,0 +1,119 @@
+/* Meal  Plan form CSS */
+
+/* Form styles */
+form {
+    max-width: 100%;
+    margin: 1em 0;
+}
+
+fieldset {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    color: #800000;
+    padding: 0 0.5em;
+}
+
+/* Form group container */
+.form-group {
+    margin-bottom: 1em;
+}
+
+/* Label styling */
+label {
+    display: block;
+    margin-bottom: 0.3em;
+}
+
+/* Style required asterisk */
+.required {
+    color: red;
+    font-weight: bold;
+}
+
+/* Input field styling */
+input[type="text"], 
+input[type="email"], 
+select, 
+textarea {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Radio and checkbox groups */
+.radio-group, 
+.checkbox-group {
+    margin-bottom: 0.5em;
+}
+
+.radio-group label, 
+.checkbox-group label {
+    display: inline;
+    margin-left: 0.5em;
+}
+
+/* Button styling */
+.button-group {
+    padding: 1em;
+    border: none;
+}
+
+.btn {
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+.btn-submit {
+    background-color: steelblue;
+    color: white;
+}
+
+.btn-reset {
+    background-color: #800000;
+    color: white;
+}
+
+/* Button hover effects */
+.btn:hover {
+    opacity: 0.8;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.btn-submit:hover {
+    background-color: #4682B4;
+}
+
+.btn-reset:hover {
+    background-color: #900000;
+}
+
+/* Textarea styling */
+textarea {
+    resize: vertical;
+}
+
+/* Media queries for responsive form */
+@media screen and (min-width: 768px) {
+    input[type="text"], 
+    input[type="email"], 
+    select {
+        width: 60%;
+    }
+    
+    textarea {
+        width: 80%;
+    }
+}
