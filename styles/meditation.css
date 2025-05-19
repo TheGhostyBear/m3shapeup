@@ -1,0 +1,62 @@
+/* Styles for the meditation page */
+
+/* Layout adjustments */
+main {
+    float: left;
+    width: 65%;
+    padding-right: 2%;
+}
+
+.sidebar {
+    float: right;
+    width: 30%;
+    margin-top: 2em;
+}
+
+/* Video section styling */
+.video-section {
+    margin: 2em 0;
+}
+
+.video-section h2 {
+    color: #8B0000; /* Dark red color for headings */
+    margin-bottom: 0.5em;
+}
+
+video {
+    max-width: 100%;
+    border: 1px solid #ccc;
+}
+
+/* Music section styling */
+.music-section {
+    margin: 2em 0;
+}
+
+.music-section h2 {
+    color: #8B0000;
+    margin-bottom: 1em;
+}
+
+.audio-player {
+    margin-bottom: 1em;
+    background-color: #f5f5f5;
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+.audio-player audio {
+    width: 100%;
+}
+
+/* For smaller screens */
+@media only screen and (max-width: 767px) {
+    main, .sidebar {
+        float: none;
+        width: 100%;
+    }
+    
+    .sidebar {
+        margin-top: 1em;
+    }
+}

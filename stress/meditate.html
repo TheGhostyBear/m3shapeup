@@ -4,12 +4,146 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Shape Up! | Meditation</title>
+	<link rel="icon" href="../images/favicon.ico">
+	<link rel="stylesheet" href="../styles/main.css">
+	<link rel="stylesheet" href="../styles/meditation.css">
+	    <style>
+        @font-face {
+            font-family: 'American Captain';
+            src: url('../fonts/American Captain.ttf') format('truetype');
+        }
+        
+        header h2 {
+            font-family: 'American Captain', sans-serif;
+        }
+        aside ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        aside li {
+            background-repeat: no-repeat;
+            background-position: left center;
+            background-size: 20px 20px;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        aside li:nth-child(1) {
+            background-image: url('../images/run-icon.png');
+        }
+        
+        aside li:nth-child(2) {
+            background-image: url('../images/stretch-icon.png');
+        }
+        
+        aside li:nth-child(3) {
+            background-image: url('../images/strength-icon.png');
+        }
+        
+        aside li:nth-child(4) {
+            background-image: url('../images/cardio-icon.png');
+        }
+        
+        aside li:nth-child(5) {
+            background-image: url('../images/yoga-icon.png');
+        }
+    </style>
 </head>
 
 <body>
+	<header>
+		<img src="../images/shape_up_logo.png" alt="Shape Up Logo">
+		<h2>Shape Up!</h2>
+		<h3>Find the best fit for you</h3>
+	</header>
+	
+	<nav>
+		<input type="checkbox" id="menu-toggle" class="menu-toggle">
+		<label for="menu-toggle" class="menu-label">Menu</label>
+		<div class="nav-menu">
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<li><a href="../strength/strength.html">Strength Training</a></li>
+				<li><a href="../cardio/cardio.html">Cardio Exercises</a></li>
+				<li>
+					<a href="stress.html" class="current">Stress Relief</a>
+					<ul>
+						<li><a href="stress.html">What is Stress?</a></li>
+						<li><a href="tips.html">5 Helpful Tips</a></li>
+						<li><a href="meditate.html" class="current">Meditation</a></li>
+						<li><a href="vipassana.html">Vipassana</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="../diet/diet.html">Healthy Diets</a>
+					<ul>
+						<li><a href="../diet/diet.html">Why a Healthy Diet?</a></li>
+						<li><a href="../diet/meals.html">Plan Your Meals</a></li>
+						<li><a href="../diet/calories.html">Count Your Calories</a></li>
+						<li><a href="../diet/bmi.html">Calculate Your BMI</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
 	<main>
-	    <h1>Meditation</h1>
-		<h2>Under Construction</h2>
+		<h2>What is Meditation?</h2>
+		<p>Meditation is one path toward transforming the mind. Buddhist meditation practices encourage and develop concentration, clarity, and emotional positivity. When you begin a meditation practice, you may learn the patterns and habits of your mind. Meditation offers you a way to cultivate new and more positive ways to approach the things you do throughout your day. Meditation can have a transformative effect and can lead to positive changes as well as a new understanding of life.</p>
+
+		<section class="video-section">
+			<h2>Video of a woman meditating</h2>
+			<video controls width="100%">
+				<source src="../media/meditation.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</section>
+
+		<section class="music-section">
+			<h2>Choose your meditation music</h2>
+			<div class="audio-player">
+				<audio controls>
+					<source src="../media/ambient_grand_piano.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+			<div class="audio-player">
+				<audio controls>
+					<source src="../media/body_and_soul.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+			<div class="audio-player">
+				<audio controls>
+					<source src="../media/time_inevitability.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+			<div class="audio-player">
+				<audio controls>
+					<source src="../media/waves_and_tears.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>
+			</div>
+		</section>
 	</main>
+
+	<div class="sidebar">
+		<aside>
+			<h2>Additional resources</h2>
+			<ul>
+				<li><a href="https://www.cdc.gov/physical-activity-basics/benefits/index.html">Physical activity and health</a></li>
+				<li><a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/flexibility-exercise-stretching">Stretching exercises</a></li>
+				<li><a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/strength-and-resistance-training-exercise">Strength training</a></li>
+				<li><a href="https://www.health.harvard.edu/exercise-and-fitness/interval-training-for-a-stronger-heart">Cardiovascular training</a></li>
+				<li><a href="https://www.self.com/gallery/power-yoga-workout">Yoga workout</a></li>
+			</ul>
+		</aside>
+	</div>
+
+	<footer>
+		&copy; Shape Up!
+	</footer>
 </body>
 </html>
