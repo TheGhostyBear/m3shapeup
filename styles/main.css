@@ -70,29 +70,28 @@ footer{
 }
 
 aside {
-  flex: 1;
-    min-width: 180px;
-    border: 2px solid steelblue;
-    border-radius: 10px;
-    padding: 1em;
-    margin: 0;
+  border: 2px solid steelblue;
+  border-radius: 10px;
+  padding: 1em;
+  margin: 0;
 }
 /* Main content layout*/
 .main-content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "section"
+    "sidebar";
   padding: 20px;
   gap: 1em;
 }
 
 section {
-  width: 100%;
-  order: 1; /* Display section first on small screens */
+  grid-area: section;
 }
 
 .sidebar {
-  width: 100%;
-  order: 2; /* Display sidebar after section on small screens */
+  grid-area: sidebar;
 }
 
 /* Mobile navigation - checkbox hack */
@@ -132,8 +131,8 @@ nav ul {
   margin: 0;
   padding: 0;
   background-color: steelblue;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 nav ul li {
@@ -172,20 +171,17 @@ nav ul li:hover > ul {
 @media screen and (min-width: 768px) {
   /* Layout for medium screens and up */
   .main-content {
-    flex-direction: row;
-    flex-wrap: wrap;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "section sidebar";
+    gap: 2em;
   }
   
   section {
-    flex: 3;
     min-width: 280px;
-    padding-right: 1em;
   }
   
   .sidebar {
-    flex: 1;
     min-width: 220px;
-
   }
   
   /* Navigation for larger screens */
@@ -198,7 +194,8 @@ nav ul li:hover > ul {
   }
   
   nav ul {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
   
   nav ul li {
